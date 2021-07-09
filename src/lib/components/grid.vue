@@ -1,5 +1,5 @@
 <template>
-  <div class="p-grid" resize>
+  <div class="grid" resize>
     <slot></slot>
   </div>
 </template>
@@ -35,9 +35,9 @@
 </script>
 
 <style lang="less">
-  .p-grid-board {
+  .grid-board {
     position: relative;
-    .p-grid-board__box {
+    .grid-board__box {
       position: relative;
       z-index: 1;
       display: grid;
@@ -46,7 +46,7 @@
         background-color: rgba(255, 255, 0, 0.4);
       }
     }
-    .p-grid-board__detect {
+    .grid-board__detect {
       position: absolute;
       top: 0;
       left: 0;

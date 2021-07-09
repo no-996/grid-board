@@ -417,7 +417,7 @@ export default {
   render() {
     return (
       <div
-        class="p-grid-board"
+        class="grid-board"
         style={{
           width: `${this.width * this.size + this.gap * (this.width - 1)}px`,
           height: `${this.height * this.size + this.gap * (this.height - 1)}px`,
@@ -446,7 +446,7 @@ export default {
         <GridBoardBox
           ref="board"
           items={this.items}
-          class="p-grid-board__box"
+          class="grid-board__box"
           on={{
             'board-item-dragstart': this.onBoardItemDragstart,
             'board-item-dragend': this.onBoardItemDragend,
@@ -487,7 +487,7 @@ export default {
           {/* 检测层 */}
           {this.detect ? (
             <div
-              class="p-grid-board__detect"
+              class="grid-board__detect"
               style={{
                 'z-index': 7,
               }}
@@ -501,7 +501,7 @@ export default {
         </GridBoardBox>
         {/* {this.detect || true ? (
           <div
-            class="p-grid-board__detect"
+            class="grid-board__detect"
             on={{
               dragenter: this.onDragenter,
               dragleave: this.onDragleave,

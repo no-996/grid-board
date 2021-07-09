@@ -1,5 +1,5 @@
 <template>
-  <div class="p-grid-box">
+  <div class="grid-box">
     <slot></slot>
   </div>
 </template>

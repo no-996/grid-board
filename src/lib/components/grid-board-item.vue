@@ -1,6 +1,6 @@
 <template>
   <div
-    class="p-grid-board-item"
+    class="grid-board-item"
     @dragstart.stop="onDragstart"
     @dragend.stop="onDragend"
     :style="{
@@ -107,7 +107,7 @@
       // 当前布局项中是否为grid（层层嵌套）
       isGrid() {
         if (this.$children.length > 0) {
-          return this.$children[0].constructor === this.$parent.$parent.$parent.$options.components['p-grid']
+          return this.$children[0].constructor === this.$parent.$parent.$parent.$options.components['grid']
         }
         return false
       },
@@ -172,7 +172,7 @@
 </script>
 
 <style lang="less">
-  .p-grid-board-item {
+  .grid-board-item {
     cursor: pointer;
     position: relative;
     @op-size: 10px;

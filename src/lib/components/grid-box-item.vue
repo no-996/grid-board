@@ -1,5 +1,5 @@
 <template>
-  <div class="p-grid-box-item" @dragstart="onDragstart" @dragend="onDragend" draggable>
+  <div class="grid-box-item" @dragstart="onDragstart" @dragend="onDragend" draggable>
     <slot></slot>
   </div>
 </template>
@@ -51,7 +51,7 @@
 </script>
 
 <style lang="less">
-  .p-grid-box-item {
+  .grid-box-item {
     cursor: pointer;
     position: relative;
     z-index: 5;
