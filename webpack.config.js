@@ -63,6 +63,9 @@ module.exports = {
     filename: '[name].js',
     // chunkFilename: '[name].bundle.js'
   },
+  node: {
+    __filename: true,
+  },
   module: {
     rules: [
       {

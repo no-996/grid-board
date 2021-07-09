@@ -154,6 +154,13 @@ export default {
       this.detect = true
 
       this.currentDrag = { node, info }
+
+      this.log('onBoxItemDragstart', {
+        detail: {
+          currentDrag: this.currentDrag,
+          self: this,
+        },
+      })
     },
     onBoxItemDragend(/*e, node, info*/) {
       console.log('board<-grid<-box<-item dragend')
@@ -237,7 +244,12 @@ export default {
       this.indicator = false
     },
     onDrop(e) {
-      console.log('onDrop')
+      this.log('onDrop', {
+        detail: {
+          currentDrag: this.currentDrag,
+          self: this,
+        },
+      })
       if (this.currentDrag) {
         // 插入
         let { node, info } = this.currentDrag
@@ -259,6 +271,8 @@ export default {
         dispatch.call(this, 'gird-board', 'board-drop', e, this.currentDrag)
 
         this.currentDrag = null
+
+        this.detect = false
       } else {
         // 移动
       }
@@ -404,13 +418,16 @@ export default {
     },
     onBoardDrop(e, data) {
       const index = this.items.findIndex((o) => o.node === data.node)
-      this.items.splice(index, 1)
+      if (index >= 0) {
+        this.items.splice(index, 1)
+      }
+      this.detect = false
     },
   },
   created() {
     this.$on('box-item-dragstart', this.onBoxItemDragstart)
     this.$on('box-item-dragend', this.onBoxItemDragend)
-    // this.$on('board-drop', this.onBoardDrop)
+    this.$on('board-drop', this.onBoardDrop)
     // TODO: 状态需要修复
   },
   mounted() {},
