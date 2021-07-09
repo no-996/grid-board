@@ -428,7 +428,6 @@ export default {
     this.$on('box-item-dragstart', this.onBoxItemDragstart)
     this.$on('box-item-dragend', this.onBoxItemDragend)
     this.$on('board-drop', this.onBoardDrop)
-    // TODO: 状态需要修复
   },
   mounted() {},
   render() {
